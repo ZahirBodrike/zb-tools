@@ -1,0 +1,47 @@
+// 单行文本超出省略
+.single-omit {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// 多行文本超出显示
+.multi-ellipsis(@lines) {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: @lines;
+  -webkit-box-orient: vertical;
+}
+
+// IOS手机容器滚动条滑动不流畅
+.ios-touch-scroll {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+// 隐藏滚动条
+div::-webkit-scrollbar {
+  display: none;
+}
+
+/*
+  div::-webkit-scrollbar 滚动条整体部分
+  div::-webkit-scrollbar-thumb  滚动条里面的小方块，能向上向下移动（或往左往右移动，取决于是垂直滚动条还是水平滚动条）
+  div::-webkit-scrollbar-track  滚动条的轨道（里面装有Thumb）
+  div::-webkit-scrollbar-button 滚动条的轨道的两端按钮，允许通过点击微调小方块的位置。
+  div::-webkit-scrollbar-track-piece 内层轨道，滚动条中间部分（除去）
+  div::-webkit-scrollbar-corner 边角，即两个滚动条的交汇处
+  div::-webkit-resizer 两个滚动条的交汇处上用于通过拖动调整元素大小的小控件
+
+  注意：此方案有兼容性问题，一般需要隐藏滚动条时我都是用一个色块通过定位盖上去，或者将子级元素调大，父级元素使用overflow-hidden截掉滚动条部分
+*/
+
+// 字体渐变
+.text {
+  display: inline-block;
+  background: linear-gradient(to left top, #6750e9, #9fa2fa);
+  -webkit-background-clip: text;
+  color: rgba(255, 255, 255, 0);
+  -webkit-text-fill-color: rgba(255,255,255,0);
+}
