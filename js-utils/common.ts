@@ -5,6 +5,14 @@
 const isEmptyObject = obj => Reflect.ownKeys(obj).length == 0 && obj.constructor == Object;
 
 /**
+ * 是否整数
+ * @param value 判断对象
+ */
+function isInteger(value: string | number): boolean {
+  return /^[\-+]?\d*$/.test(value.toString());
+}
+
+/**
  * 判断变量类型
  * @param data {any} 需要判断类型的数据
  */
